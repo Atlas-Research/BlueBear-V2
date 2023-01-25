@@ -1,3 +1,12 @@
+#SETUP BEFORE RUNNING - Tested on Ubuntu
+# STEP 1: WITHIN YOUR HOME FOLDER CREATE A FOLDER CALLED ticker_data 
+# STEP 2: RIGHT CLICK ON THE NEWLY CREATED ticker_data AND SELECT properties 
+# STEP 3: LOCATED Parent Folder and COPY THE FILE PATHWAY
+# STEP 4: NAVIGATE TO LINE 45 WITHIN THE CODE & PASTE THE NEWLY COPIED FILE PATHWAY
+# STEP 5: ADD /ticker_data to the end
+# This will enable the automation to create new cvs
+# NEXT STEPS Integrate SQL Server connection to allow for both local and cloud based backups
+
 import os
 import pandas as pd
 import pandas_datareader as pdr
@@ -5,7 +14,7 @@ import matplotlib.pyplot as plt
 import datetime
 from pandas.plotting import register_matplotlib_converters
 
-symbol = 'WWE'
+symbol = 'XYZ'    # ADD TICKER SYMBOL OF CURRENCY NEEDED TO BE SCRAPPEP
 end = datetime.datetime.today()
 start = datetime.date(end.year - 10, 1, 1)
 Volume = ''
@@ -36,7 +45,7 @@ plt.xlabel("Date")
 plt.ylabel("$ Price")
 plt.title(symbol + " 5 Year Close Price", color='purple', size=20)
 
-path_out = '/home/stegresearch/ticker_data/{0}/'.format(symbol)
+path_out = '/home/USER/ticker_data/{0}/'.format(symbol) 
 try:
     os.makedirs(path_out)
     print("Directory ", path_out,  " Created ")
