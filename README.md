@@ -9,7 +9,7 @@ Faster
 Cleans Data
 Analyzes the data
 Creates a new folder
-names the fodler by the ticker name
+names the folder by the ticker name
 adds newly created CVS & Charts within newly created folder
 
 
